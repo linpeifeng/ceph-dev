@@ -1,0 +1,5 @@
+#ACTION=="add", KERNEL=="vd*", SUBSYSTEM=="block", RUN+="/bin/sh -c 'echo 1024 > /sys/block/%k/queue/nr_requests"
+#ACTION=="add", KERNEL=="vd*", SUBSYSTEM=="block", RUN+="/bin/sh -c 'echo add > /tmp/test.txt'"
+#ACTION=="remove", KERNEL=="vd*", SUBSYSTEM=="block", RUN+="/bin/sh -c 'echo %k > /tmp/test.txt'"
+#ACTION=="add", KERNEL=="vd*", SUBSYSTEM=="block", RUN+="/bin/sh -c '/home/disk-roaming.sh %k'"
+ACTION=="remove", KERNEL=="vd*", SUBSYSTEM=="block", RUN+="/bin/sh -c '/home/disk-roaming.sh %k'"
